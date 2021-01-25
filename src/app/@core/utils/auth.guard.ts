@@ -19,7 +19,7 @@ export class AuthGuard implements CanLoad {
 
   canLoad(
     route: Route,
-    segments: UrlSegment[]
+    segments: UrlSegment[],
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>

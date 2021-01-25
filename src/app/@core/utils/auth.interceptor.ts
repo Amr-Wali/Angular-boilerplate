@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     const helper = new JwtHelperService();
     const currentUser = this._authService.currentUserValue;

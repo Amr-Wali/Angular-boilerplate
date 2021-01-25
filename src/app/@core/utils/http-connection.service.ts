@@ -12,7 +12,7 @@ export class HttpConnectionService {
 
   constructor(
     private _http: HttpClient,
-    private _toastrService: ToastrService
+    private _toastrService: ToastrService,
   ) {}
 
   post(url: string, body: any, options?): Observable<any> {
@@ -47,7 +47,7 @@ export class HttpConnectionService {
     this._toastrService.showTranslatedToast(
       'danger',
       error.error.errorMessage,
-      'something-went-wrong'
+      'something-went-wrong',
     );
     return throwError(error);
   }

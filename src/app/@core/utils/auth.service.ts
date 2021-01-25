@@ -12,7 +12,7 @@ export class AuthService {
   private currentUser: Observable<User> = this._currentUserSubject.asObservable();
   constructor(
     private _httpConnectionService: HttpConnectionService,
-    private router: Router
+    private router: Router,
   ) { }
 
   public get currentUserValue(): User {

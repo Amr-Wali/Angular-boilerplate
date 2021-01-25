@@ -48,7 +48,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private menuService: NbMenuService,
     private themeService: NbThemeService,
     private userService: UserData,
-    private breakpointService: NbMediaBreakpointsService
+    private breakpointService: NbMediaBreakpointsService,
   ) {}
 
   ngOnInit() {
@@ -64,17 +64,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .onMediaQueryChange()
       .pipe(
         map(([, currentBreakpoint]) => currentBreakpoint.width < xl),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe(
-        (isLessThanXl: boolean) => (this.userPictureOnly = isLessThanXl)
+        (isLessThanXl: boolean) => (this.userPictureOnly = isLessThanXl),
       );
 
     this.themeService
       .onThemeChange()
       .pipe(
         map(({ name }) => name),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((themeName) => (this.currentTheme = themeName));
   }

@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class ToastrService {
   constructor(
     private _toastrService: NbToastrService,
-    private _translateService: TranslateService
+    private _translateService: TranslateService,
   ) {}
 
   showToast(status: NbComponentStatus, msg, title, customIcon?) {
@@ -30,7 +30,7 @@ export class ToastrService {
     status: NbComponentStatus,
     msg: string,
     title: string,
-    customIcon?
+    customIcon?,
   ) {
     const sub = this._translateService.get(title).subscribe((translation) => {
       this.showToast(status, msg, translation, customIcon);
