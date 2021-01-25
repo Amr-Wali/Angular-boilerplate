@@ -132,6 +132,26 @@
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true
-}
+    "directive-class-suffix": true,
+    "no-submodule-imports": false,
+    "jsdoc-format": false,
+    "no-implicit-dependencies": [
+      true,
+      [
+        "@shared",
+        "@core",
+        "@app",
+        "@theme",
+        "environments"
+      ]
+    ],
+    "interface-name": false,
+    "max-classes-per-file": false,
+    "prefer-for-of": false,
+    "no-object-literal-type-assertion": false,
+    "no-unused-variable": false
+  },
+  "extends": [
+    "tslint:latest"
+  ]
 }

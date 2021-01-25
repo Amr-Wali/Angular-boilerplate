@@ -8,13 +8,12 @@ import { ToastrService } from './toastr.service';
   providedIn: 'root',
 })
 export class HttpConnectionService {
-
   apiUrlPrefix = environment.apiUrlPrefix;
 
   constructor(
     private _http: HttpClient,
-    private _toastrService: ToastrService,
-  ) { }
+    private _toastrService: ToastrService
+  ) {}
 
   post(url: string, body: any, options?): Observable<any> {
     const fullUrl: string = this.apiUrlPrefix + url;
@@ -23,7 +22,7 @@ export class HttpConnectionService {
 
   get(url: string, params?: HttpParams): Observable<any> {
     const fullUrl: string = this.apiUrlPrefix + url;
-    const opts = params ? { params: params } : {};
+    const opts = params ? { params } : {};
     return this._http.get(fullUrl, opts);
   }
 
@@ -31,7 +30,7 @@ export class HttpConnectionService {
     const fullUrl: string = this.apiUrlPrefix + url;
     let headers = new HttpHeaders();
     headers = headers.set('Accept', 'application/pdf');
-    return this._http.get(fullUrl, { headers: headers, responseType: 'blob' });
+    return this._http.get(fullUrl, { headers, responseType: 'blob' });
   }
 
   put(url: string, body: any, options?): Observable<any> {
@@ -45,7 +44,11 @@ export class HttpConnectionService {
   }
 
   errorHandler(error) {
-    this._toastrService.showTranslatedToast('danger', error.error.errorMessage, 'something-went-wrong');
+    this._toastrService.showTranslatedToast(
+      'danger',
+      error.error.errorMessage,
+      'something-went-wrong'
+    );
     return throwError(error);
   }
 }

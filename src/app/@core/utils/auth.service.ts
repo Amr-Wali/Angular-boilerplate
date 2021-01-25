@@ -7,6 +7,7 @@ import { HttpConnectionService } from './http-connection.service';
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
 
   private _currentUserSubject: BehaviorSubject<User> = new BehaviorSubject(null);
