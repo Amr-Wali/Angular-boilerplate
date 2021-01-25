@@ -152,6 +152,7 @@
     "no-unused-variable": false
   },
   "extends": [
-    "tslint:latest"
+    "tslint:latest",
+    "tslint-config-prettier"
   ]
 }
