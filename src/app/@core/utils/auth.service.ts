@@ -15,13 +15,13 @@ export class AuthService {
   constructor(
     private _httpConnectionService: HttpConnectionService,
     private router: Router,
-  ) {}
+  ) { }
 
   public get currentUserValue(): User {
     return this._currentUserSubject.value;
   }
 
-  login() {}
+  login() { }
 
   logout() {
     this._currentUserSubject.next(null);
